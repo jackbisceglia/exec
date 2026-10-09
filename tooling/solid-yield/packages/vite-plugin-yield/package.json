@@ -1,0 +1,43 @@
+{
+  "name": "vite-plugin-solid-yield",
+  "description": "The JSX transform's one yield rule for solid-yield (`yield*` in a JSX hole becomes `perform(\u2026)`), as a Vite plugin, a Babel plugin and a plain transform; also annotates the library's `lazy()` with its module URL.",
+  "version": "0.0.0",
+  "author": "Dev Agrawal <dev@codemod.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devagrawal09/solid-yield.git",
+    "directory": "packages/vite-plugin-yield"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.29.0",
+    "magic-string": "^0.30.21"
+  },
+  "peerDependencies": {
+    "solid-yield": "workspace:*",
+    "vite": ">=6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    }
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/babel__core": "7.20.5"
+  }
+}

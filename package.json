@@ -1,0 +1,44 @@
+{
+  "name": "exec",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=24.18.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @exec/core build && pnpm --parallel --filter @exec/api --filter @exec/web run dev",
+    "dev:api": "pnpm --filter @exec/api dev",
+    "dev:web": "pnpm --filter @exec/web dev",
+    "dev:cloudflare": "pnpm --filter @exec/core build && alchemy dev alchemy.run.ts",
+    "deploy": "pnpm build && alchemy deploy alchemy.run.ts",
+    "build": "pnpm build:packages && pnpm typecheck:infra",
+    "build:packages": "pnpm build:vendor && pnpm --filter \"./packages/*\" -r run build",
+    "typecheck": "pnpm typecheck:infra && pnpm --filter \"./packages/*\" -r run typecheck",
+    "typecheck:infra": "tsgo --noEmit -p tsconfig.json",
+    "lint": "pnpm lint:root && pnpm --filter \"./packages/*\" -r run lint",
+    "lint:root": "oxlint alchemy.run.ts infra tooling/oxlint/test-setup.ts vitest.oxlint.config.ts",
+    "format": "pnpm format:root && pnpm --filter \"./packages/*\" -r run format",
+    "format:root": "prettier --write package.json pnpm-workspace.yaml tsconfig*.json *config.* alchemy.run.ts README.md .github infra tooling/oxlint/test-setup.ts",
+    "format:check": "prettier --check package.json pnpm-workspace.yaml tsconfig*.json *config.* alchemy.run.ts README.md .github infra tooling/oxlint/test-setup.ts packages",
+    "test": "pnpm --filter @exec/core build && pnpm --filter \"./packages/*\" -r --if-present run test",
+    "test:oxlint": "vitest run --config vitest.oxlint.config.ts",
+    "check": "pnpm build && pnpm typecheck && pnpm lint && pnpm format:check && pnpm test",
+    "build:vendor": "pnpm --filter solid-yield build",
+    "postinstall": "pnpm build:vendor"
+  },
+  "devDependencies": {
+    "@effect/platform-node": "4.0.2",
+    "@oxlint/plugins": "1.87.0",
+    "@types/node": "24.12.0",
+    "@typescript/native-preview": "7.0.0-dev.20260707.2",
+    "alchemy": "catalog:",
+    "effect": "catalog:",
+    "oxlint": "1.87.0",
+    "oxlint-tsgolint": "7.0.2003",
+    "prettier": "3.9.9",
+    "vitest": "5.0.3",
+    "@cloudflare/workers-types": "5.20261009.1"
+  }
+}

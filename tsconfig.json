@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node", "@cloudflare/workers-types"],
+    "allowImportingTsExtensions": true,
+    "lib": ["ES2024"]
+  },
+  "include": [
+    "alchemy.run.ts",
+    "infra/**/*.ts",
+    "vitest.oxlint.config.ts",
+    "tooling/oxlint/test-setup.ts",
+    "packages/web/src/worker.ts"
+  ]
+}

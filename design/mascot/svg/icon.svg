@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs><clipPath id="exec-frame"><rect width="32" height="32" rx="6"/></clipPath></defs>
+  <g clip-path="url(#exec-frame)">
+    <rect width="32" height="32" fill="#131711"/>
+    <rect x="3" y="13" width="26" height="27" rx="10" fill="#ff6b2c"/>
+    <g transform="rotate(-10 18.5 11.5)">
+      <rect x="13" y="7.4" width="11" height="6.6" rx="1.5" fill="#c2451a"/>
+      <rect x="13" y="10.5" width="11" height="1.8" fill="#f8f6f0"/>
+    </g>
+    <circle cx="10.6" cy="21.7" r="4.8" fill="#c2451a"/>
+    <circle cx="20.6" cy="21.7" r="4.8" fill="#c2451a"/>
+    <circle cx="11" cy="21.2" r="4.6" fill="#f8f6f0"/>
+    <circle cx="21" cy="21.2" r="4.6" fill="#f8f6f0"/>
+    <circle class="mascot-pupil" cx="12.1" cy="20.3" r="2.2" fill="#131711"/>
+    <circle class="mascot-pupil" cx="22.1" cy="20.3" r="2.2" fill="#131711"/>
+  </g>
+</svg>

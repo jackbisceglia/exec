@@ -1,0 +1,13 @@
+packages:
+  - packages/*
+  - tooling/solid-yield/packages/*
+
+catalog:
+  alchemy: 2.0.0-beta.81
+  effect: 4.0.2
+  solid-js: 2.0.0-rc.14
+  vite: 8.3.4
+
+onlyBuiltDependencies:
+  - esbuild
+  - workerd

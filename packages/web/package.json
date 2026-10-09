@@ -1,0 +1,38 @@
+{
+  "name": "@exec/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsgo --noEmit && tsgo --noEmit -p tsconfig.worker.json",
+    "lint": "oxlint . --ignore-pattern src/worker.ts && oxlint --tsconfig tsconfig.worker.json src/worker.ts",
+    "format": "prettier --write . --ignore-path ../../.prettierignore",
+    "format:check": "prettier --check . --ignore-path ../../.prettierignore",
+    "dev": "vite --host 127.0.0.1 --port 3000 --strictPort",
+    "preview": "vite preview --host 127.0.0.1 --port 3000 --strictPort",
+    "test": "vitest run --config vitest.config.ts"
+  },
+  "dependencies": {
+    "effect": "catalog:",
+    "@exec/core": "workspace:*",
+    "solid-js": "catalog:",
+    "@solidjs/web": "2.0.0-rc.14",
+    "solid-yield": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "catalog:",
+    "@solidjs/vite-plugin": "3.0.0-next.48",
+    "vite-plugin-solid-yield": "workspace:*",
+    "alchemy": "catalog:",
+    "@cloudflare/workers-types": "5.20261009.1",
+    "jsdom": "30.1.2",
+    "vitest": "5.0.3"
+  }
+}

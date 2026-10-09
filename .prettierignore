@@ -1,0 +1,6 @@
+tooling/oxlint/anti-slop/
+node_modules/
+**/dist/
+.alchemy/
+pnpm-lock.yaml
+tooling/solid-yield/
