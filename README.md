@@ -11,6 +11,17 @@ scaffold contains only a neutral frontend and health API. Agent execution,
 persistence, authentication, and product-specific contracts await the research
 discussion. `exec` is the working name; no custom domain is configured.
 
+## Research and design
+
+Start with the [research pack](docs/research/README.md) for the product landscape,
+Executor integration, Pi Durable, Cloudflare hosting, VM persistence and costs,
+and open architecture decisions. The notes separate inspected evidence from
+proposed validation work; no runtime architecture has been selected.
+
+The [mascot assets and usage guide](design/mascot/README.md) include SVG and PNG
+variants, icons, and a [visual contact sheet](design/mascot/contact-sheet.png).
+Open `design/mascot/contact-sheet.html` locally for the interactive presentation.
+
 ## Setup and local development
 
 Use Node 24.18.0 or later and pnpm 10.33.0.
